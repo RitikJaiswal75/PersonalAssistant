@@ -10,3 +10,5 @@ Capable Tasks
 	re-directs you to gmail and signs you in
 7.current Weather forecast
 8.BeatBox
+9.Complex mathematics
+10.General knowledge QnA
