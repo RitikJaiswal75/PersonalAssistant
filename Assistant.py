@@ -11,7 +11,7 @@ import os  # for functions related to operating systems
 import ezgmail  # for sending and reading mails
 import random   # generating random numbers
 from bs4 import BeautifulSoup  # parsing html pages that are sent in emails
-
+import wolframalpha
 
 # converts uct to ist as the weather api returns uct
 def tc(t):
@@ -264,6 +264,14 @@ def BeatBox():
             speak(str)
     engine.setProperty("rate", 175)
 
+    
+def helping(query):
+    app_id='xxxxxxxxxxxxxxx'
+    client = wolframalpha.Client(app_id) 
+    res = client.query(query)
+    answer = next(res.results).text 
+    print(answer)
+    speak(answer)
 
 # Main function
 if __name__ == "__main__":
@@ -293,4 +301,4 @@ if __name__ == "__main__":
         elif "exit" in query or "bye" in query:
             print("Thank you for using me! Have a nice time.")
             speak("Thank you for using me! Have a nice time.")
-            break
+        else: helping(query)
